@@ -1,13 +1,47 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ /* background-image: linear-gradient(to right , rgb(71, 152, 218),rgb(221, 77, 161)); */
+ background-image: linear-gradient(to right , #36d1dc,#5b86e5);
+ color: rgb(255, 255, 255);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.centre {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-div{
+  float: right;
+}
+
+{/* Scearch Bar button*/}
+.app-scrbar-js-button{
+  background-color:#ffff4d ;
+  border: 0px;
+  color: #111010;
+  font-weight: bold;
+  /* transition: all 100ms ease; */
+  cursor:pointer;
+}
+
+.app-scrbar-js-button:hover{
+  transform: scale(1.1);
+}
+
+{/* Scearch Bar Input*/}
+
+.app-scrbar-js-input{
+  border: 0px;
+}
+
+.app-imgai-js-img{
+  margin-top: 10px;
+}
+
+.app-particles{
+  position:fixed ;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
