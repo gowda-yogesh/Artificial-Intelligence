@@ -13,7 +13,7 @@ body {
   float: right;
 }
 
-{/* Scearch Bar button*/}
+/* Scearch Bar button*/
 .app-scrbar-js-button{
   background-color:#ffff4d ;
   border: 0px;
@@ -27,16 +27,13 @@ body {
   transform: scale(1.1);
 }
 
-{/* Scearch Bar Input*/}
+/* Scearch Bar Input*/
 
 .app-scrbar-js-input{
   border: 0px;
 }
 
-.app-imgai-js-img{
-  margin-top: 10px;
-}
-
+/* particle style  in the background*/
 .app-particles{
   position:fixed ;
   z-index: -1;

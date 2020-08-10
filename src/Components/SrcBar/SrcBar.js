@@ -15,7 +15,7 @@ function SrcBar({ onSearchInput, onSearchButton }) {
                 <button
                     className="app-scrbar-js-button"
                     onClick={onSearchButton}>
-                    Click Me :O
+                    Detect
                 </button>
             </div>
         </div>

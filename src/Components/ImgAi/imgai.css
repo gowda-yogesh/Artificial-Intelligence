@@ -1,0 +1,15 @@
+.app-imgai-js-img{
+  margin-top: 10px;
+}
+
+.app-imgai-js-boundingbox{
+
+    position: absolute;
+    box-shadow:  0 0 0 3px #ffff4d inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    
+    
+  }
