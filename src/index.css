@@ -7,10 +7,9 @@ body {
 .centre {
   display: flex;
   justify-content: center;
-}
-
-.navbar-div{
-  float: right;
+  padding : 0px;
+  border : 0px;
+  margin : 2px;
 }
 
 /* Scearch Bar button*/

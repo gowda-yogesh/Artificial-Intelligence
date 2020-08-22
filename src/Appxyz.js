@@ -45,7 +45,14 @@ class Appxyz extends React.Component {
       image: "",
       coOrdinates: {},
       route: "signIn",
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: "",
+        name: "",
+        email: "",
+        entries: 0,
+        joined: ""
+      }
     };
 
   }
@@ -69,7 +76,7 @@ class Appxyz extends React.Component {
 
   // *** Function to set the route on call back , or after a perticulat event
 
-  onRouteChange = (route) => {
+  onRouteChange = (route, name) => {
     if (route === "signIn") {
       this.setState({ isSignedIn: false })
     } else if (route === "home") {
@@ -77,6 +84,19 @@ class Appxyz extends React.Component {
     }
     this.setState({ route: route });
 
+  }
+
+  updateUser = (user) => {
+    const { id, name, email, entries, joined } = user;
+    this.setState({
+      user: {
+        id: id,
+        name: name,
+        email: email,
+        entries: entries,
+        joined: joined
+      }
+    })
   }
 
   // *** function to set the box in image ***
@@ -132,24 +152,27 @@ class Appxyz extends React.Component {
 
     // Image 
     const img = this.state.searchItem;
+    console.log("yogesh chicked it 2");
 
     // predict API from clarifai
-    // app.models
-    //   .predict("a403429f2ddf4b49b307e318f00e528b", img)
-    //   .then(response => {
+    // Clarifai.FACE_DETECT_MODEL = "a403429f2ddf4b49b307e318f00e528b"
+    console.log("yogesh chicked it 3");
+    app.models
+      .predict(Clarifai.FACE_DETECT_MODEL, img)
+      .then(response => {
 
-    //     console.log(response);
-    //     const face1 = this.faceDetails(response);
-    //     console.log("yogesh");
-    //     console.log(face1);
-    //     const objCoordinates = this.setBoundingBox(face1);
-    //     this.setState({ coOrdinates: objCoordinates })
-    //     console.log("cordinates ", objCoordinates);
-    //     console.log("this.state.coOrdinates", this.state.coOrdinates);
+        console.log("calrify response ", response);
+        const face1 = this.faceDetails(response);
+        console.log("yogesh");
+        console.log(face1);
+        const objCoordinates = this.setBoundingBox(face1);
+        this.setState({ coOrdinates: objCoordinates })
+        console.log("cordinates ", objCoordinates);
+        console.log("this.state.coOrdinates", this.state.coOrdinates);
 
 
-    //   })
-    //   .catch(err => console.log("Really sorry count retrive the image"));
+      })
+      .catch(err => console.log("Really sorry count retrive the image"));
   }
 
 
@@ -162,13 +185,13 @@ class Appxyz extends React.Component {
         {
           this.state.route === "home"
             ? <div>
-              <UsrRank />
+              <UsrRank name={this.state.user.name} />
               <SrcBar onSearchInput={this.onSearchInput} onSearchButton={this.onScearchButton} />
               <ImgAi displayImage={this.state.image} coOrdinates={this.state.coOrdinates} />
             </div>
             : (this.state.route === "signIn"
-              ? <SignIN onRouteChange={this.onRouteChange} />
-              : <Register onRouteChange={this.onRouteChange} />
+              ? <SignIN updateUser={this.updateUser} onRouteChange={this.onRouteChange} />
+              : <Register updateUser={this.updateUser} onRouteChange={this.onRouteChange} />
             )
         }
       </div>

@@ -4,12 +4,13 @@ import React from 'react';
 function SrcBar({ onSearchInput, onSearchButton }) {
     return (
         <div>
-            <h3 className="centre">This Amezing app will detect the Face in the picture</h3>
+            <h3 className="centre">DETECT THE FACE</h3>
+            <br />
             <div className="centre">
                 <input
                     className="app-scrbar-js-input"
                     type="search"
-                    placeholder="Please enter the value "
+                    placeholder="Please enter image url "
                     onChange={onSearchInput}>
                 </input>
                 <button

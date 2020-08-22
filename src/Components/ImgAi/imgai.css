@@ -1,15 +1,30 @@
-.app-imgai-js-img{
+/* .app-imgai-js-img{
   margin-top: 10px;
+} */
+.c{
+
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
 }
 
-.app-imgai-js-boundingbox{
+.relative {
+  position: relative;
+  width: 500px;
+  height: auto;
+  border:   2px   outset #ffff4d;
+  visibility: 0.1;
+  /* box-shadow: 5px 10px #888888; */
 
-    position: absolute;
-    box-shadow:  0 0 0 3px #ffff4d inset;
+} 
+
+.boundingbox{
+
+    position: absolute; 
+    box-shadow:  0 0 0 2px #ffff4d inset;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
-    
-    
+       
   }

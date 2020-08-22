@@ -5,20 +5,19 @@ import "./imgai.css";
 function ImgAi({ displayImage, coOrdinates }) {
 
     const { top, right, bottom, left } = coOrdinates;
+
     return (
-        <div /*className="centre"*/>
-            <div className="app-imgai-js-img">
+        <div className="c">
+            <div className="relative">
+
                 <img
                     id="app-imgai-js-img-details"
-                    alt="Not yet set plaes wait"
+                    alt="Face"
                     src={displayImage}
-
                     width="500px"
                     height="auto"
                 />
-                <div
-
-                    className="app-imgai-js-boundingbox"
+                <div className="boundingbox"
                     style={
                         {
                             top: top,
@@ -26,10 +25,12 @@ function ImgAi({ displayImage, coOrdinates }) {
                             bottom: bottom,
                             left: left
                         }
-                    }>
+                    }
+                >
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

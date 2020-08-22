@@ -1,14 +1,11 @@
 import React from 'react';
 
 
-function App() {
+function App({ name }) {
     return (
         <div className="centre" >
             <div>
-                <h3>{`As on my Name is yogesh aste and my rank : `}</h3>
-            </div>
-            <div>
-                <h2>{`007`}</h2>
+                <h3>{`Hello ${name} your Rank  :${`007`} `}</h3>
             </div>
         </div>
     );
